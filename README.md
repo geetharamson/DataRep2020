@@ -15,10 +15,15 @@ Launch to a web page.
 In the cmder create virtual environment:
 
 >install python -m venv venv
+
 >venv\Scripts\activate.bat
+
 >pip freeze
+
 >pip freeze>requirements.txt
+
 >pip install flash
+
 >set FLASH_APP (=server name)
 
 
