@@ -14,15 +14,17 @@ This repository contains the project for Data Representation
 ##### Requirements:
 In the cmder create virtual environment:
 
-> install python -m venv venv
+>> install python -m venv venv
 
 **To run the virtual environment**
 > venv\Scripts\activate.bat
 
 **To see the packages needed to run this project**
 > pip freeze
+
 **To load the file of packages**
 > pip freeze -r requirements.txt
+
 **To exit**
 > deactivate
 
