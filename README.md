@@ -28,6 +28,8 @@ In the cmder create virtual environment:
 **To exit**
 > deactivate
 
+Database host address:GeethaKathikesan.mysql.eu.pythonanywhere-services.com
+
 
 
 
