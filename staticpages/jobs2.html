@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- working on jobs2.html for Main Project
+     Author : Geetha Karthikesan
+     G00376320@gmit.ie
+    DATA REPRESENTATION AND QUERYING	 -->
+<html>
+
+    <head>
+        <title> Jobs</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Pharma Jobs in Ireland</h1>
+        <div> 
+            <button id="showCreateButton" onclick="showCreate()">Create</button>
+        </div>
+        <div>
+            <!-- adding ids to the table-->
+            <table class="table table-striped table-hover" id="jobTable">
+                <tr>
+                        <th>JobId</th>
+                        <th>JobTitle</th>
+						<th>Company</th>
+						<th>County</th>
+						<th>NoOfVacancy</th>
+						<th>Update</th>
+						<th>Delete</th>
+                </tr>
+				<tr>
+                        <td>111</td>
+                        <td>API manufacturer</td>
+                        <td>UCB</td>
+                        <td>Clare</td>
+						<td>120</td>
+                        <td><button onclick="showUpdate(this)">Update</button></td>
+                        <td><button onclick="doDelete(this)">Delete</button></td>
+                </tr>
+				<tr>
+                        <td>112</td>
+                        <td>Animal Health </td>
+                        <td>Bimeda Ireland</td>
+                        <td>Dublin</td>
+						<td>150</td>
+                        <td><button onclick="showUpdate(this)">Update</button></td>
+                        <td><button onclick="doDelete(this)">Delete</button></td>
+                </tr>
+				<tr>
+                        <td>113</td>
+                        <td>Pharma manufacturer</td>
+                        <td>Temmler</td>
+                        <td>Kerry</td>
+						<td>60</td>
+                        <td><button onclick="showUpdate(this)">Update</button></td>
+                        <td><button onclick="doDelete(this)">Delete</button></td>
+                </tr>
+				<tr>
+                        <td>114</td>
+                        <td>Infants Nutrional Products</td>
+                        <td>Wyeth</td>
+                        <td>Limerick</td>
+						<td>600</td>
+                        <td><button onclick="showUpdate(this)">Update</button></td>
+                        <td><button onclick="doDelete(this)">Delete</button></td>
+                            
+                </tr>
+				<tr>
+                        <td>115</td>
+                        <td>Food supplements</td>
+                        <td>Bioshell</td>
+                        <td>Mayo</td>
+						<td>40</td>
+                        <td><button onclick="showUpdate(this)">Update</button></td>
+                        <td><button onclick="doDelete(this)">Delete</button></td>
+                            
+                </tr>                     
+            </table>
+        </div>
+        <div id='createUpdateForm' style="display: none">
+                <h2><span id="createLabel">Create </span> <span id="updateLabel">update</span> Jobs</h2>
+                JobId <input type="number" name="JobId"/> <br/>
+                JobTitle <input type="text" name="JobTitle"> <br/>
+                Company <input type="text" name="Company"/> <br/>
+				County <select name="County">
+                        <option value="Dublin">Dublin</option>
+                        <option value="Clare">Clare</option>
+                        <option value="Limerick">Limerick</option>
+						<option value="Kerry">Kerry</option>
+						<option value="Mayo">Mayo</option>
+						</select> <br/>
+                NoOfVacancy <input type="number" name="NoOfVacancy"/> <br/>
+                <!--  giving the span and buttons ids for javascript functions-->
+                <span><button id="doCreateButton" onclick="doCreate()">Create</button></span>
+                <span><button id="doUpdateButton" onclick="doUpdate()">Update</button></span>
+        </div>
+    </body>
+
+<div class="footer">
+    <h4>Data Representation Project 2020</h4>
+</div>
+
+<script>
+/*****************    showCreate         *******************
+- hide the create button and the table,
+- shows the createUpdateForm <div>.
+- shows the create button and word/label
+- hides the update button and word
+- call the function when the `createButton` is clicked
+*/ 
+
+function showCreate(){
+    document.getElementById('showCreateButton').style.display="none"
+    document.getElementById('jobTable').style.display="none"
+    document.getElementById('createUpdateForm').style.display="block"  
+    document.getElementById('createLabel').style.display="inline"
+    document.getElementById('updateLabel').style.display="none"
+    document.getElementById('doCreateButton').style.display="block"
+    document.getElementById('doUpdateButton').style.display="none"
+}
+
+/*****************    showUpdate         *******************
+- A showUpdate(buttonElement) function that shows the form. 
+- show the update button and word
+- hides the create button and word
+- hides the table 
+- Call this function from each of the update buttons in the table where 'this' is the element that is activated
+- calls functions getJobFromRow and populateFormWithJob so that the form is populated from the table
+- The row element is the grandparent of the button Element that was passed in as a parameter
+*/
+
+function showUpdate(buttonElement){
+    document.getElementById('createUpdateForm').style.display="block"
+    document.getElementById('showCreateButton').style.display="none"
+    document.getElementById('jobTable').style.display="none"
+
+    //show the update button and word
+    document.getElementById('updateLabel').style.display="inline"
+    document.getElementById('doUpdateButton').style.display="block"
+    
+    //hides the create button and word
+    document.getElementById('createLabel').style.display="none"
+    document.getElementById('doCreateButton').style.display="none"
+
+    /* call getJobFromRow and populateFormWithJob to populate the form from the table
+    (The row element is the grandparent of the buttonElement that was passed in as a parameter) */
+    var rowElement = buttonElement.parentNode.parentNode
+    var job = getJobFromRow(rowElement)
+    populateFormWithJob(job)
+}
+ 
+/***************************** showViewAll **************************
+- a function that shows the Create button and the table and hides the createUpdateForm form
+- This function will be called from the doCreate() function
+*/
+
+function showViewAll(){
+    //show the create button
+    document.getElementById('showCreateButton').style.display="block"
+    //show the table
+    document.getElementById('jobTable').style.display="block"
+    //hides the createUpdateForm 
+    document.getElementById('createUpdateForm').style.display="none"    
+}
+
+/*       *****************    doCreate   ***************
+- call this function from the create button (test with console.log)
+- read all the values from the form and store them in a job object, (test using console.log of the job object)
+- calls the clearForm function to clear the data from the form when creating a second time
+*/
+function doCreate(){
+        var form = document.getElementById('createUpdateForm')
+
+        var job = {}
+        job.JobId = form.querySelector('input[name="JobId"]').value
+        job.JobTitle = form.querySelector('input[name="JobTitle"]').value
+        job.Company = form.querySelector('input[name="Company"]').value
+		job.County = form.querySelector('select[name="County"]').value
+        job.NoOfVacancy = form.querySelector('input[name="NoOfVacancy"]').value
+        console.log(JSON.stringify(job))
+
+        addJobToTable(job)
+        clearForm()
+        showViewAll()
+    }
+//      *************** doUpdate  ****************** 
+/*
+When user clicks the update button on the form, the following 2 actions are required
+a. read the job from the form
+b. modify the row containing the job (find the job by finding the row or to add an id 
+such as the jobId to each row). 
+(would also need to modify the job table adding id attribute to the row)
+*/
+
+function doUpdate(){
+    var job = getJobFromForm();
+    var rowElement = document.getElementById(job.JobId)
+    setJobInRow(rowElement,job)
+    clearForm()
+    showViewAll()
+    }
+
+
+
+/***************************** doDelete() **********************
+- place a doDelete(this) function into each of the delete buttons
+- uses deleteRow which takes in the index of the row
+- therefore find the row and get its index
+*/
+
+function doDelete(r){
+    var tableElement = document.getElementById('jobTable')
+    var index = r.parentNode.parentNode.rowIndex;
+    tableElement.deleteRow(index);
+
+}
+
+/*********************** addJobToTable ************************
+- A function that finds the table and adds a row to the end of it, then a cell, then the JobId etc
+- To be called from doCreate() function
+*/
+function addJobToTable(job){
+        var tableElement = document.getElementById('jobTable')
+        var rowElement = tableElement.insertRow(-1)
+        rowElement.setAttribute('JobId',job.JobId)
+        var cell1 = rowElement.insertCell(0);
+        cell1.innerHTML = job.JobId
+        var cell2 = rowElement.insertCell(1);
+        cell2.innerHTML = job.JobTitle
+        var cell3 = rowElement.insertCell(2);
+        cell3.innerHTML = job.Company
+        var cell4 = rowElement.insertCell(3);
+		cell4.innerHTML = job.County
+		var cell5 = rowElement.insertCell(4);
+        cell5.innerHTML = job.NoOfVacancy
+        var cell6 = rowElement.insertCell(5);
+        cell6.innerHTML = '<button onclick=showUpdate(this)>Update</button>'
+        var cell7 = rowElement.insertCell(6);
+        cell7.innerHTML = '<button onclick=doDelete(this)>delete</button>'
+
+    }
+
+/****************  clearForm **********************************
+- To clear the data that is in the form when you press the create button again
+- Uses querySelector to find the inputs (instead of having to give them all ids).
+*/
+
+function clearForm(){
+    var form = document.getElementById('createUpdateForm')
+    form.querySelector('input[name="JobId"]').disabled = false
+    form.querySelector('input[name="JobId"]').value =''
+    form.querySelector('input[name="JobTitle"]').value =''
+	form.querySelector('input[name="Company"]').value =''
+	    // note type is select here, not input!
+    form.querySelector('select[name="County"]').value ='' 
+    form.querySelector('input[name="NoOfVacancy"]').value=''
+    }
+
+/***************    getJobFromRow  **********
+- called from doUpdate function
+- When updating, the form will be populated with the details of the job being updated
+    a. Read the job data from the current row
+    b. Populate the form with that job data
+- Takes in a row element and returns a Job object
+*/
+
+function getJobFromRow(rowElement){
+    var job = {} //create a job object
+    job.JobId = rowElement.cells[0].firstChild.textContent
+    job.JobTitle = rowElement.cells[1].firstChild.textContent
+    job.Company = rowElement.cells[2].firstChild.textContent
+	job.County = rowElement.cells[3].firstChild.textContent
+    job.NoOfVacancy = rowElement.cells[4].firstChild.textContent
+    return job
+    
+}
+
+/*  ********************  setJobInRow() **************
+- Takes the job and row element and populate the row with the job
+- called from the doUpdate function
+*/
+
+function setJobInRow(rowElement,job){
+        rowElement.cells[0].firstChild.textContent= job.JobId 
+        rowElement.cells[1].firstChild.textContent= job.JobTitle
+        rowElement.cells[2].firstChild.textContent= job.Company 
+        rowElement.cells[3].firstChild.textContent= job.County
+		rowElement.cells[4].firstChild.textContent= job.NoOfVacancy
+    }
+
+/*********************  populateFormWithJob  *************
+- takes in a job as a parameter
+- called from the showUpdate function 
+*/
+
+function populateFormWithJob(job){
+        var form = document.getElementById('createUpdateForm')
+        form.querySelector('input[name="JobId"]').disabled = true
+
+        form.querySelector('input[name="JobId"]').value  = job.JobId
+		form.querySelector('input[name="JobTitle"]').value= job.JobTitle
+		form.querySelector('input[name="Company"]').value= job.Company
+        form.querySelector('select[name="County"]').value= job.County
+        form.querySelector('input[name="NoOfVacancy"]').value= job.NoOfVacancy
+        return job
+	} 
+
+
+/* ***************** getJobFromForm() **************************
+- returns a jobobject
+- called from the doUpdate function
+*/
+
+function getJobFromForm(){
+        var form = document.getElementById('createUpdateForm')
+        var job = {}
+        job.JobId = form.querySelector('input[name="JobId"]').value
+        job.JobTitle = form.querySelector('input[name="JobTitle"]').value
+        job.Company = form.querySelector('input[name="Company"]').value
+		job.County = form.querySelector('select[name="County"]').value
+        job.NoOfVacancy= form.querySelector('input[name="NoOfVacancy"]').value
+        console.log(JSON.stringify(job))
+        return job
+    }
+</script>
+</html>
