@@ -32,7 +32,7 @@ This repository contains:
     
     Images : have snip shots of my work with snipping tool
 
-    Link to app on pythonanywhere :http://geethakathikesan.eu.pythonanywhere.com/
+    Link to app on pythonanywhere :http://geethakathikesan.eu.pythonanywhere.com/  and was done with another repository https://github.com/geetharamson/deploytoPA.git
     
     
 ### How to clone this repository
