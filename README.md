@@ -11,21 +11,45 @@ This repository contains the project for Data Representation
 + Then build the CRUD.
 + Launch to a web page.
 
-##### Requirements:
-In the cmder create virtual environment:
+### Contents of this repository
+This repository contains:
+    
+    server: application.py
 
->>install python -m venv venv
+    web page: pharmajobs.html
 
-**To run the virtual environment**
+    DAO: zjobsDAO.py
+
+    DB config to edit on PA: dbconfigtemplate.py
+
+    Virtual environment requirements: requirements.txt
+
+    index: index.html
+
+    All old files in \oldservers
+
+    Link to app on pythonanywhere :http://geethakathikesan.eu.pythonanywhere.com/
+
+##### Virtual Environment Requirements:
+    
+    In the cmder create virtual environment: ((WINDOWS machine))
+>install python -m venv venv
+
+    To run the virtual environment
 > venv\Scripts\activate.bat
 
-**To see the packages needed to run this project**
+    To see the packages needed to run this project
 > pip freeze
 
-**To load the file of packages**
+    To load the file of packages
 > pip freeze -r requirements.txt
 
-**To exit**
+    To install the requires packages:
+
+  >pip install flask
+  >pip install mysql-connector-python
+    
+    To exit
 > deactivate
 
 Database host address:GeethaKathikesan.mysql.eu.pythonanywhere-services.com
