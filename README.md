@@ -18,7 +18,7 @@ This repository contains:
     
     server: app.py
 
-    web page: pharmajobs.html
+    web page: newPharmajobs.html
 
     DAO: zjobsDAO.py  [zjobsDAO.py contains jobsDAO class]
 
@@ -26,7 +26,7 @@ This repository contains:
 
     Virtual environment requirements: requirements.txt
 
-    index: jobs2.html
+    staticpages: jobs2.html 
 
     All old files in \oldservers
     
