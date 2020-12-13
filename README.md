@@ -20,7 +20,7 @@ This repository contains:
 
     web page: pharmajobs.html
 
-    DAO: zjobsDAO.py
+    DAO: zjobsDAO.py  [zjobsDAO.py contains jobsDAO class]
 
     DB config to edit on PA: dbconfigtemplate.py
 
@@ -45,7 +45,7 @@ A repository on GitHub exists as a remote repository. You can clone this reposit
    4. Open a terminal on your machine. Change the current working directory to the location where you want the cloned directory to be made.
    5. Type git clone, and then paste the URL you copied in 2 above.
    
-          https://github.com/geetharamson/DataRep2020.git
+            > https://github.com/geetharamson/DataRep2020.git
    6.Press enter to clone the repository to your machine.
 
 ### Virtual Environment Requirements:
@@ -75,7 +75,10 @@ To load the file of packages
       
      > deactivate
 
+### Testing the connection
+You can test the connection by checking the http responses with the Curl, for example:
 
+      > curl -i http://localhost:5000/
 
 ##### Add-ins:
  The Following was outputted: C:\Users\Owner\Desktop\project (venv) λ flask run
@@ -87,11 +90,19 @@ Debug mode: off
 Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 
-MySQL database & table
-Database = datarep
-Table = pharmajobs
+### MySQL database & table
+     Database = datarep
+     Table = pharmajobs
 
-MySQL command to create 
+MySQL command to create is 
+
+      create table pharmajobs(
+    -> JobId int PRIMARY KEY,
+    -> JobTitle varchar(250),
+    -> Company varchar(250),
+    -> County varchar(250),
+    -> NoOfVacancy int(11)
+    -> );
 
 |  Field        |  Type        | Null    |  Key   | Default | Extra  |
 | ------------- | ----------   | ------  | ------ |-------- | -------|
@@ -103,7 +114,11 @@ MySQL command to create
 
 
 
+## REFERENCES
 
+Python Virtual Environment - [https://docs.python-guide.org/dev/virtualenvs/]
+Flask User Guide - [https://flask.palletsprojects.com/en/1.1.x/#user-s-guide]
+PythonAnywhere -[https://blog.pythonanywhere.com/121/]
 
 
 
