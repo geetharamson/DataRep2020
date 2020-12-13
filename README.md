@@ -6,8 +6,8 @@
 This repository contains the project for Data Representation 
 
 ### Building the project:
-+ Thought to some about the Pharmaceutical jobs in Ireland, hence made use of https://www.getreskilled.com/pharmaceutical-jobs/ireland-factory-table/ to collect details 
- for my database and hence step by step process to do my project.
++ My project is about the Pharmaceutical jobs in Ireland. Used this link https://www.getreskilled.com/pharmaceutical-jobs/ireland-factory-table/ to collect details 
+ for my database and hence step by step process.
 + The first step was to develop the environment with Flask.
 + Then server.
 + Then build the CRUD.
@@ -45,40 +45,40 @@ A repository on GitHub exists as a remote repository. You can clone this reposit
    4. Open a terminal on your machine. Change the current working directory to the location where you want the cloned directory to be made.
    5. Type git clone, and then paste the URL you copied in 2 above.
    
-            > https://github.com/geetharamson/DataRep2020.git
+             https://github.com/geetharamson/DataRep2020.git
    6.Press enter to clone the repository to your machine.
 
 ### Virtual Environment Requirements:
     
  In the cmder create virtual environment: ((WINDOWS machine))
       
-    >install python -m venv venv
+    install python -m venv venv
 
 To run the virtual environment
            
-    > venv\Scripts\activate.bat
+    venv\Scripts\activate.bat
 
 To see the packages needed to run this project
 
-    > pip freeze
+    pip freeze
 
 To load the file of packages
 
-    > pip freeze -r requirements.txt
+     pip freeze -r requirements.txt
 
  To install the requires packages:
 
-    >pip install flask
-    >pip install mysql-connector-python
+    pip install flask
+    pip install mysql-connector-python
     
  To exit
       
-     > deactivate
+      deactivate
 
 ### Testing the connection
 You can test the connection by checking the http responses with the Curl, for example:
 
-      > curl -i http://localhost:5000/
+       curl -i http://localhost:5000/
 
 ##### Add-ins:
  The Following was outputted: C:\Users\Owner\Desktop\project (venv) λ flask run
@@ -116,9 +116,10 @@ MySQL command to create is
 
 ## REFERENCES
 
-Python Virtual Environment - [https://docs.python-guide.org/dev/virtualenvs/]
-Flask User Guide - [https://flask.palletsprojects.com/en/1.1.x/#user-s-guide]
-PythonAnywhere -[https://blog.pythonanywhere.com/121/]
+ 1. Python Virtual Environment - [https://docs.python-guide.org/dev/virtualenvs/]
+ 
+ 2. Flask User Guide - [https://flask.palletsprojects.com/en/1.1.x/#user-s-guide]
+ 3. PythonAnywhere -[https://blog.pythonanywhere.com/121/]
 
 
 
