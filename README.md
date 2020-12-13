@@ -118,18 +118,10 @@ MySQL command to create is
 
  1. Python Virtual Environment - [https://docs.python-guide.org/dev/virtualenvs/]
  
- 2. Flask User Guide - [https://flask.palletsprojects.com/en/1.1.x/#user-s-guide]
+ 2. Flask User Guide - [https://flask.palletsprojects.com/en/1.1.x/#user-s-guide
+ 
  3. PythonAnywhere -[https://blog.pythonanywhere.com/121/]
 
 
-
-
-
-                                                                                                                        Geetha Karthikesan :rocket:
-
-
-
-
-
-
-
+ Geetha Karthikesan :rocket:
+                                                                                                                
