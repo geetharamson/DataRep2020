@@ -39,9 +39,9 @@ This repository contains:
 
 A repository on GitHub exists as a remote repository. You can clone this repository to create a local copy on your computer by following these instructions:
 
-   1. On GitHub, navigate to the main page of the repository https://github.com/geetharamson/DataRep2020.git   
+   1. On GitHub, navigate to the main page of the repository [GitHub](https://github.com/geetharamson/DataRep2020.git)
    2. Under the repository name, click Clone or download.
-   3. Choose "Clone with HTTPS".
+   3. Choose "Clone with HTTPS".Click the [`Code`](#code) button which is colored green.
    4. Open a terminal on your machine. Change the current working directory to the location where you want the cloned directory to be made.
    5. Type git clone, and then paste the URL you copied in 2 above.
    
