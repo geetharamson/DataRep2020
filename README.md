@@ -26,13 +26,13 @@ This repository contains:
 
     Virtual environment requirements: requirements.txt
 
-    staticpages: jobs2.html 
+    staticpages: login.html,jobs.html,company.html,employee.html
 
     All old files in \oldservers
     
     Images : have snip shots of my work with snipping tool
 
-    Link to app on pythonanywhere :http://geethakathikesan.eu.pythonanywhere.com/  and was done with another repository https://github.com/geetharamson/deploytoPA.git
+    Link to app on pythonanywhere :http://geethakarthikesan.eu.pythonanywhere.com/  and was done with another repository https://github.com/geetharamson/deploytoPA.git
     
     
 ### How to clone this repository
